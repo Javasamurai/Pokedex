@@ -99,11 +99,19 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.pokedex"
+        applicationId "com.ideasfactory.pokedex"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+    }
+    signingConfigs {
+        release {
+            storeFile file("upload.keystore")
+            storePassword "programmer"
+            keyAlias "my-key-alias"
+            keyPassword "programmer"
+        }
     }
     splits {
         abi {
@@ -115,6 +123,7 @@ android {
     }
     buildTypes {
         release {
+	    signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
