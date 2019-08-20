@@ -211,7 +211,7 @@ export default class App extends Component {
               <PokemonList item ={item.name} name = {item.name} index= {index + 1} key={index} updateView={()=> this.updateView(index, item.name)}/>
             ))}
           </ScrollView>
-          <AdMobBanner bannerSize="fullBanner" adUnitID="ca-app-pub-3940256099942544/6300978111" testDeviceID="EMULATOR"/>
+          {/* <AdMobBanner bannerSize="fullBanner" adUnitID="ca-app-pub-3940256099942544/6300978111" testDeviceID="EMULATOR"/> */}
         </View>
       );
     }
